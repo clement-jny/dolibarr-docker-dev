@@ -16,7 +16,7 @@ services:
   php-apache:
     build:
         context: ../php-dockerfile
-#SELECT YOUR PHP VERSION FOR YOUR ENVIRONMENT
+#SELECT HERE YOUR PHP VERSION FOR YOUR ENVIRONMENT
         dockerfile : php-8.2.Dockerfile
 #        dockerfile : php-7.4.Dockerfile
 
