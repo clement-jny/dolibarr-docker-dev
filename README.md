@@ -7,10 +7,17 @@ A docker setting dedicated to developpement and maintain dolibarr core and modul
   * php version
   * dolibarr version
   * mysql version (you can change here your login password and database name)
-  
-* launch the docker-compose up, and connect on http://localhost/dolibarr/htdocs to launch the install
-* on the database setting
-  * use mysql on database server
-  * tcheck "create database"
-  * enter user "root" and root login password 2 times  
+
+Launch the docker-compose up, and connect on http://localhost/dolibarr/htdocs to launch the install
+
+## install setting
+On the database setting
+* use mysql on database server
+* tcheck "create database"
+* enter user "root" and root login password 2 times
+## Other Tools access  
+### phpmyAdmin
+phpmyadmin page are accessible on http://pma.localhost
+### Traefik
+Traefik page are accessible on http://localhost:8080
 
