@@ -10,6 +10,8 @@ A docker setting dedicated to developpement and maintain dolibarr core and modul
 
 Launch the docker-compose up, and connect on http://localhost/dolibarr/htdocs to launch the install
 
+If you want to change the php version or mysql kernel, launch docker-compose up -d --build
+
 ## install setting
 On the database setting
 * use mysql on database server
