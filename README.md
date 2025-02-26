@@ -7,6 +7,7 @@ A docker setting dedicated to developpement and maintain dolibarr core and modul
   * php version
   * dolibarr version
   * mysql version (you can change here your login password and database name)
+  * NEW : You can use postgres with specific settings
 
 Launch the docker-compose up, and connect on http://localhost/dolibarr/htdocs to launch the install
 
@@ -22,4 +23,6 @@ On the database setting
 phpmyadmin page are accessible on http://pma.localhost
 ### Traefik
 Traefik page are accessible on http://localhost:8080
+### pgadmin (if postgres version)
+pgadmin page are accessible on http://pgadmin.localhost
 
