@@ -1,0 +1,15 @@
+# *
+.DS_Store
+
+# User's custom modules
+custom/*
+!custom/README.md
+
+# Dolibarr's versions
+versions/*
+!versions/README.md
+
+# dolibarr-dev/*
+# !dolibarr-dev/README.md
+# !dolibarr-dev/compose*
+# !dolibarr-dev/docker*
