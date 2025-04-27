@@ -1,9 +1,24 @@
 # *
 .DS_Store
 
+.vscode
+
 # Compose files
-composes/*
-!composes/README.md
+composes/adminer/*
+!composes/adminer/compose.yml
+!composes/adminer/README.md
+
+composes/dolibarr/*
+!composes/dolibarr/README.md
+
+composes/phpmyadmin/*
+!composes/phpmyadmin/compose.yml
+!composes/phpmyadmin/README.md
+
+composes/traefik/*
+!composes/traefik/compose.yml
+!composes/traefik/traefik.yml
+!composes/traefik/README.md
 
 # User's custom modules
 custom/*
@@ -17,8 +32,3 @@ dockerfiles/*
 # Dolibarr's versions
 versions/*
 !versions/README.md
-
-# dolibarr-dev/*
-# !dolibarr-dev/README.md
-# !dolibarr-dev/compose*
-# !dolibarr-dev/docker*
