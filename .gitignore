@@ -1,9 +1,18 @@
 # *
 .DS_Store
 
+# Compose files
+composes/*
+!composes/README.md
+
 # User's custom modules
 custom/*
 !custom/README.md
+
+# Dockerfile files
+dockerfiles/*
+!dockerfiles/example.Dockerfile
+!dockerfiles/README.md
 
 # Dolibarr's versions
 versions/*
