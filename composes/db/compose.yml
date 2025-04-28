@@ -7,8 +7,4 @@ services:
       MARIADB_ROOT_PASSWORD: root
       TZ: Europe/Paris
     volumes:
-      - ./.db:/var/lib/mysql
-
-networks:
-  default:
-    name: mariadb_network
+      - ./.mariadb:/var/lib/mysql

@@ -8,12 +8,12 @@ composes/adminer/*
 !composes/adminer/compose.yml
 !composes/adminer/README.md
 
+composes/db/*
+!composes/db/compose.yml
+!composes/db/README.md
+
 composes/dolibarr/*
 !composes/dolibarr/README.md
-
-composes/mariadb/*
-!composes/mariadb/compose.yml
-!composes/mariadb/README.md
 
 composes/phpmyadmin/*
 !composes/phpmyadmin/compose.yml
