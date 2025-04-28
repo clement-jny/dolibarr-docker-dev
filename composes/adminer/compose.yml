@@ -1,0 +1,9 @@
+services:
+  adminer:
+    container_name: adminer
+    image: adminer:latest
+    environment:
+      ADMINER_PLUGINS: 'dark-switcher codemirror tables-filter'
+      # ADMINER_DESIGN: '' # For known design
+    ports:
+      - 9080:8080
