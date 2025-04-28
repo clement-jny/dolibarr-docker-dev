@@ -10,6 +10,19 @@ up_database:
 down_database:
 	bash scripts/db/down_database.sh
 
+# Dolibarr part
+v ?=
+type ?= traefik
+get_dolibarr:
+	bash scripts/dolibarr/get_dolibarr.sh $(v)
+up_dolibarr:
+	bash scripts/dolibarr/up_dolibarr.sh $(v) $(type)
+down_dolibarr:
+	bash scripts/dolibarr/down_dolibarr.sh $(v)
+# list:
+# 	bash scripts/dolibarr/list_dolibarr.sh
+# down_all:
+# 	bash scripts/dolibarr/down_all.sh
 
 # Phpmyadmin part
 up_phpmyadmin:
