@@ -7,8 +7,8 @@ services:
     ports:
       - 9090:80
     networks:
-      - mariadb_network
+      - mariadb_default
 
 networks:
-  mariadb_network:
+  mariadb_default:
     external: true
