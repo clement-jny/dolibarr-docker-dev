@@ -1,0 +1,8 @@
+services:
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin:latest
+    environment:
+      PMA_ARBITRARY: 1
+    ports:
+      - 9090:80
