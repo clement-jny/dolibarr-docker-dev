@@ -9,3 +9,10 @@ up_database:
 	bash scripts/db/up_database.sh
 down_database:
 	bash scripts/db/down_database.sh
+
+
+# Phpmyadmin part
+up_phpmyadmin:
+	bash scripts/phpmyadmin/up_phpmyadmin.sh
+down_phpmyadmin:
+	bash scripts/phpmyadmin/down_phpmyadmin.sh
