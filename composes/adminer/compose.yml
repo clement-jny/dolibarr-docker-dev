@@ -7,3 +7,9 @@ services:
       # ADMINER_DESIGN: '' # For known design
     ports:
       - 9080:8080
+    networks:
+      - mariadb_network
+
+networks:
+  mariadb_network:
+    external: true

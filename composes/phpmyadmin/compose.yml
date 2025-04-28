@@ -6,3 +6,9 @@ services:
       PMA_ARBITRARY: 1
     ports:
       - 9090:80
+    networks:
+      - mariadb_network
+
+networks:
+  mariadb_network:
+    external: true
