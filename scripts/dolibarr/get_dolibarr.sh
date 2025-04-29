@@ -47,8 +47,7 @@ cd ${VERSION}
 # Create base compose file
 cat > compose-${CLEAN_VERSION}.yml <<EOF
 services:
-  dolibarr_${CLEAN_VERSION}:
-    container_name: dolibarr_${CLEAN_VERSION}
+  dolibarr${CLEAN_VERSION}:
     build:
       context: ../../../dockerfiles
       dockerfile: example.Dockerfile
@@ -58,9 +57,9 @@ services:
       - ../../../custom:/var/www/html/custom
     labels:
       - traefik.enable=true
-      - traefik.http.routers.dolibarr_${CLEAN_VERSION}.entrypoints=web
-      - traefik.http.routers.dolibarr_${CLEAN_VERSION}.rule=Host(\`dlb${CLEAN_VERSION}.localhost\`)
-      - traefik.http.services.dolibarr_${CLEAN_VERSION}.loadbalancer.server.port=80
+      - traefik.http.routers.dlb${CLEAN_VERSION}.entrypoints=web
+      - traefik.http.routers.dlb${CLEAN_VERSION}.rule=Host(\`dlb${CLEAN_VERSION}.localhost\`)
+      - traefik.http.services.dlb${CLEAN_VERSION}.loadbalancer.server.port=80
     networks:
       - traefik_default
       - db_default
