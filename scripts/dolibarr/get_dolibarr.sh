@@ -62,13 +62,13 @@ services:
       - traefik.http.routers.dolibarr_${CLEAN_VERSION}.rule=Host(\`dlb${CLEAN_VERSION}.localhost\`)
       - traefik.http.services.dolibarr_${CLEAN_VERSION}.loadbalancer.server.port=80
     networks:
-      - db_default
       - traefik_default
+      - db_default
 
 networks:
-  db_default:
-    external: true
   traefik_default:
+    external: true
+  db_default:
     external: true
 EOF
 
