@@ -25,20 +25,21 @@ fi
 #   exit 1
 # fi
 
-if [ "$TYPE" == "port" ]; then
-  OVERRIDE_FILE="composes/dolibarr/${VERSION}/compose-${CLEAN_VERSION}.port.override.yml"
-elif [ "$TYPE" == "traefik" ]; then
-  OVERRIDE_FILE="composes/dolibarr/${VERSION}/compose-${CLEAN_VERSION}.traefik.override.yml"
-else
-  echo "❌ Invalid type specified! Use 'port' or 'traefik'."
-  exit 1
-fi
+# if [ "$TYPE" == "port" ]; then
+#   OVERRIDE_FILE="composes/dolibarr/${VERSION}/compose-${CLEAN_VERSION}.port.override.yml"
+# elif [ "$TYPE" == "traefik" ]; then
+#   OVERRIDE_FILE="composes/dolibarr/${VERSION}/compose-${CLEAN_VERSION}.traefik.override.yml"
+# else
+#   echo "❌ Invalid type specified! Use 'port' or 'traefik'."
+#   exit 1
+# fi
 
-if [ ! -f "${OVERRIDE_FILE}" ]; then
-  echo "❌ Override file ${OVERRIDE_FILE} not found!"
-  exit 1
-fi
+# if [ ! -f "${OVERRIDE_FILE}" ]; then
+#   echo "❌ Override file ${OVERRIDE_FILE} not found!"
+#   exit 1
+# fi
 
 echo "🚀 Launching Dolibarr v${VERSION}..."
-docker compose -f "${COMPOSE_FILE}" -f "${OVERRIDE_FILE}" up -d
+# docker compose -f "${COMPOSE_FILE}" -f "${OVERRIDE_FILE}" up -d
+docker compose -f "${COMPOSE_FILE}" up -d
 echo "✅ Dolibarr v${VERSION} is up and running!"

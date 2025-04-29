@@ -12,11 +12,11 @@ down_database:
 
 # Dolibarr part
 v ?=
-type ?= traefik
+# type ?= traefik
 get_dolibarr:
 	bash scripts/dolibarr/get_dolibarr.sh $(v)
 up_dolibarr:
-	bash scripts/dolibarr/up_dolibarr.sh $(v) $(type)
+	bash scripts/dolibarr/up_dolibarr.sh $(v)
 down_dolibarr:
 	bash scripts/dolibarr/down_dolibarr.sh $(v)
 # list:
