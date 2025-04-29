@@ -59,35 +59,38 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.dolibarr_${CLEAN_VERSION}.entrypoints=web
-      - traefik.http.routers.dolibarr_${CLEAN_VERSION}.rule=Host(\`dolibarr-${CLEAN_VERSION}.localhost\`)
+      - traefik.http.routers.dolibarr_${CLEAN_VERSION}.rule=Host(\`dlb${CLEAN_VERSION}.localhost\`)
       - traefik.http.services.dolibarr_${CLEAN_VERSION}.loadbalancer.server.port=80
     networks:
       - db_default
+      - traefik_default
 
 networks:
   db_default:
     external: true
-EOF
-
-# Create override compose file if I want to use port without traefik
-cat > compose-${CLEAN_VERSION}.port.override.yml <<EOF
-services:
-  dolibarr_${CLEAN_VERSION}:
-    ports:
-      - 80:80
-EOF
-
-# Create override compose file if I want to use traefik
-cat > compose-${CLEAN_VERSION}.traefik.override.yml <<EOF
-services:
-  dolibarr_${CLEAN_VERSION}:
-    networks:
-      - traefik_default
-
-networks:
   traefik_default:
     external: true
 EOF
+
+# Create override compose file if I want to use port without traefik
+# cat > compose-${CLEAN_VERSION}.port.override.yml <<EOF
+# services:
+#   dolibarr_${CLEAN_VERSION}:
+#     ports:
+#       - 80:80
+# EOF
+
+# Create override compose file if I want to use traefik
+# cat > compose-${CLEAN_VERSION}.traefik.override.yml <<EOF
+# services:
+#   dolibarr_${CLEAN_VERSION}:
+#     networks:
+#       - traefik_default
+
+# networks:
+#   traefik_default:
+#     external: true
+# EOF
 
 echo "✅ Compose file created for Dolibarr ${VERSION}."
 # cd ../../
