@@ -2,7 +2,7 @@
 set -e
 
 VERSION=$1
-TYPE=$2
+# TYPE=$2
 
 if [ -z "$VERSION" ]; then
   echo "Usage: up_dolibarr <version>"
