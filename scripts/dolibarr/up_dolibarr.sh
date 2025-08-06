@@ -42,4 +42,6 @@ fi
 echo "🚀 Launching Dolibarr v${VERSION}..."
 # docker compose -f "${COMPOSE_FILE}" -f "${OVERRIDE_FILE}" up -d
 docker compose -f "${COMPOSE_FILE}" up -d
-echo "✅ Dolibarr v${VERSION} is up and running!"
+
+# echo "✅ Dolibarr v${VERSION} is up and running!"
+echo "📁 Access your Dolibarr instance at: http://dlb${CLEAN_VERSION}.localhost/install/fileconf.php?selectlang=fr_FR" # selectlang=auto
