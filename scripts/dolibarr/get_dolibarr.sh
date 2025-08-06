@@ -57,6 +57,7 @@ services:
       - ../../../custom:/var/www/html/custom
     labels:
       - traefik.enable=true
+      - traefik.docker.network=traefik_default
       - traefik.http.routers.dlb${CLEAN_VERSION}.entrypoints=web
       - traefik.http.routers.dlb${CLEAN_VERSION}.rule=Host(\`dlb${CLEAN_VERSION}.localhost\`)
       - traefik.http.services.dlb${CLEAN_VERSION}.loadbalancer.server.port=80
