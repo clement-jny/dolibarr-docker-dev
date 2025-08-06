@@ -6,14 +6,14 @@ global:
 # ---
 log:
   level: INFO # DEBUG, INFO, WARNING, ERROR, CRITICAL
-#   format: common # common, json, logfmt
-#   filePath: /var/log/traefik/traefik.log
+  format: common # common, json, logfmt
+  filePath: /var/log/traefik/traefik.log
 
 # (Optional) Accesslog
 # ---
-# accesslog:
-#   format: common # common, json, logfmt
-#   filePath: /var/log/traefik/access.log
+accesslog:
+  format: common # common, json, logfmt
+  filePath: /var/log/traefik/access.log
 
 # (Optional) Enable API & Dashboard
 # ---
