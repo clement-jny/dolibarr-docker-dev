@@ -5,10 +5,12 @@ down_adminer:
 	bash scripts/adminer/down_adminer.sh
 
 # Database part
-up_database:
-	bash scripts/database/up_database.sh
-down_database:
-	bash scripts/database/down_database.sh
+
+## MariaDB
+up_mariadb:
+	bash scripts/database/mariadb/up_mariadb.sh
+down_mariadb:
+	bash scripts/database/mariadb/down_mariadb.sh
 
 # Dolibarr part
 v ?=
