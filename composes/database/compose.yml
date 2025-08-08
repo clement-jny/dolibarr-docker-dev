@@ -7,6 +7,6 @@ services:
       MARIADB_ROOT_PASSWORD: root
       TZ: Europe/Paris
     volumes:
-      - ./.mariadb:/var/lib/mysql
+      - ./.data:/var/lib/mysql
     ports:
       - 3306:3306
