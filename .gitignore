@@ -8,9 +8,13 @@ composes/adminer/*
 !composes/adminer/compose.yml
 !composes/adminer/README.md
 
-composes/db/*
-!composes/db/compose.yml
-!composes/db/README.md
+# composes/database/*/data/
+# composes/database/*/logs/
+# composes/database/*/*.log
+# composes/database/*/*.sql
+composes/database/*/.*
+!composes/database/README.md
+!composes/database/*/compose.yml
 
 composes/dolibarr/*
 !composes/dolibarr/README.md
