@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPOSE_FILE="composes/db/compose.yml"
+COMPOSE_FILE="composes/database/compose.yml"
 
 if [ ! -f "${COMPOSE_FILE}" ]; then
   echo "❌ Compose file ${COMPOSE_FILE} not found!"
