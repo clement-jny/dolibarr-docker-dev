@@ -120,12 +120,12 @@ services:
       - traefik.http.services.dlb${CLEAN_VERSION}.loadbalancer.server.port=80
     networks:
       - traefik_default
-      - db_default
+      - mariadb_default
 
 networks:
   traefik_default:
     external: true
-  db_default:
+  mariadb_default:
     external: true
 EOF
 
