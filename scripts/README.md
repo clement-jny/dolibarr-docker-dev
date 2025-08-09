@@ -22,14 +22,16 @@ This directory contains scripts for managing Traefik, the reverse proxy that han
 - **`up_traefik.sh`** - Start Traefik reverse proxy with full configuration
 - **`down_traefik.sh`** - Stop Traefik service
 
-### Dolibarr Management
+### **`dolibarr/`**
 
-**[`dolibarr/`](dolibarr/README.md)** - Dolibarr lifecycle management
+This directory contains comprehensive scripts for managing Dolibarr instances throughout their lifecycle - from download and configuration to deployment and maintenance.
 
-- `get_dolibarr.sh` - Download, configure, and prepare Dolibarr versions
-- `up_dolibarr.sh` - Start Dolibarr instances with proper networking
-- `down_dolibarr.sh` - Stop specific Dolibarr instances
-- `down_all.sh` - Stop all running Dolibarr instances
+## 📋 Available Scripts
+
+- **`get_dolibarr.sh`** - Download, configure, and prepare Dolibarr versions
+- **`up_dolibarr.sh`** - Start Dolibarr instances with proper networking
+- **`down_dolibarr.sh`** - Stop specific Dolibarr instances
+- **`down_all.sh`** - Stop all running Dolibarr instances
 
 ### Database Administration Tools
 
