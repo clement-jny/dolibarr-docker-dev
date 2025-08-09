@@ -21,7 +21,7 @@ This directory contains the Docker Compose configuration for the MariaDB databas
 #### 🚀 Usage
 
 ```bash
-# Start the database service
+# Start MariaDB service
 
 ## Using make command (recommended)
 make up_database
@@ -32,7 +32,7 @@ docker compose up -d
 ```
 
 ```bash
-# Stop the database service
+# Stop MariaDB service
 
 ## Using make command
 make down_database
@@ -75,7 +75,7 @@ This directory contains the Docker Compose configuration for Traefik, the revers
 #### 🚀 Usage
 
 ```bash
-# Start the Traefik service
+# Start Traefik service
 
 ## Using make command (recommended)
 make up_traefik
@@ -86,7 +86,7 @@ docker compose up -d
 ```
 
 ```bash
-# Stop the Traefik service
+# Stop Traefik service
 
 ## Using make command
 make down_traefik
@@ -96,43 +96,153 @@ cd composes/traefik
 docker compose down
 ```
 
-### Dolibarr Instances
+### **`dolibarr/`**
 
-**[`dolibarr/`](dolibarr/README.md)** - Dolibarr application containers
+This directory contains Docker Compose files for all Dolibarr versions. Each version has its own subdirectory with dedicated compose configuration for independent deployment and testing.
+
+#### 📁 Directory Structure
+
+```
+composes/dolibarr/
+├── 21.0.2/
+│   └── compose-2102.yml    # Dolibarr 21.0.2 service definition
+├── 20.0.2/
+│   └── compose-2002.yml    # Dolibarr 20.0.2 service definition
+```
 
 - Accessible via version-specific URLs (e.g., `http://dlb2102.localhost/`)
 - Version-specific compose files (e.g., `21.0.2/compose-2102.yml`)
 - Traefik labels for domain routing
 
-### Management Tools
+#### ⚙️ Container Configuration
 
-**[`adminer/`](adminer/README.md)** - Lightweight database management tool
+Each Dolibarr instance includes:
+
+- **Custom Docker Image**: Built from `dockerfiles/example.Dockerfile`
+- **Volume Mounts**: Source code, documents, and custom modules
+- **Network Access**: Connected to both Traefik and database networks
+- **Domain Routing**: Automatic Traefik configuration
+
+#### 🚀 Usage
+
+```bash
+# Start specific Dolibarr service version
+
+## Using make command (recommended)
+make up_dolibarr v=21.0.2
+
+## Using docker compose directly
+cd composes/dolibarr/21.0.2
+docker compose -f compose-2102.yml up -d
+```
+
+```bash
+# Stop specific Dolibarr service version
+
+## Using make command
+make down_dolibarr v=21.0.2
+
+## Using docker compose directly
+cd composes/dolibarr/21.0.2
+docker compose -f compose-2102.yml down
+```
+
+```bash
+# Start multiple Dolibarr service versions
+make up_dolibarr v=21.0.2
+make up_dolibarr v=20.0.2
+make up_dolibarr v=19.0.4
+```
+
+```bash
+# Stop multiple Dolibarr service versions
+make down_dolibarr v=21.0.2
+make down_dolibarr v=20.0.2
+make down_dolibarr v=19.0.4
+```
+
+#### ⚠️ Important Notes
+
+- **Dependencies**: Requires Traefik and MariaDB to be running first
+- **Port Conflicts**: Each version uses a unique service name to avoid conflicts
+- **File Permissions**: Ensure proper permissions on mounted volumes
+- **Database**: Each version connects to its own database (e.g., `dolibarr_2102`)
+- **Custom Modules**: Shared across all versions via `/custom` mount
+
+## Management Tools
+
+### **`adminer/`**
+
+This directory contains the Docker Compose configuration for Adminer, a lightweight web-based database management tool perfect for quick SQL operations and database inspection during development.
 
 - Accessible via `http://localhost:9080/`
 - Simple SQL interface for development
 
-**[`phpmyadmin/`](phpmyadmin/README.md)** - Full-featured database management
+#### 🚀 Usage
+
+```bash
+# Start Adminer service
+
+## Using make command (recommended)
+make up_adminer
+
+## Using docker compose directly
+cd composes/adminer
+docker compose up -d
+```
+
+```bash
+# Stop Adminer service
+
+## Using make command
+make down_adminer
+
+## Using docker compose directly
+cd composes/adminer
+docker compose down
+```
+
+#### 🔑 Database Access
+
+- **System**: `MySQL`
+- **Server**: `mariadb`
+- **Username**: `root`
+- **Password**: `root`
+- **Database**: (leave empty to see all databases)
+
+### **`phpmyadmin/`**
+
+This directory contains the Docker Compose configuration for PHPMyAdmin, a comprehensive web-based MySQL/MariaDB administration tool that provides full database management capabilities for Dolibarr development.
 
 - Accessible via `http://localhost:9090/`
 - Advanced MySQL/MariaDB administration
 
-## 🔧 Usage
-
-These compose files are used by the automation scripts in the [`scripts/`](../scripts/README.md) directory. You can also run them manually:
+#### 🚀 Usage
 
 ```bash
-# Start the database service
-docker compose -f composes/db/compose.yml up -d
+# Start PHPMyAdmin service
 
-# Start Dolibarr version 21.0.2
-docker compose -f composes/dolibarr/21.0.2/compose-2102.yml up -d
+## Using make command (recommended)
+make up_phpmyadmin
+
+## Using docker compose directly
+cd composes/phpmyadmin
+docker compose up -d
 ```
 
-## 🌐 Network Configuration
+```bash
+# Stop PHPMyAdmin service
 
-All services use external Docker networks for communication:
+## Using make command
+make down_phpmyadmin
 
-- `traefik_default` - For reverse proxy routing
-- `db_default` - For database access
+## Using docker compose directly
+cd composes/phpmyadmin
+docker compose down
+```
 
-These networks are defined in the corresponding Docker Compose files and are created automatically when you start the services.
+#### 🔑 Database Access
+
+- **Server**: `mariadb`
+- **Username**: `root`
+- **Password**: `root`
