@@ -13,11 +13,14 @@ This directory contains scripts for managing the MariaDB database service that p
 - **`up_mariadb.sh`** - Start MariaDB database service
 - **`down_mariadb.sh`** - Stop MariaDB database service
 
-**[`traefik/`](traefik/README.md)** - Reverse proxy management
+### **`traefik/`**
 
-- Accessible via `http://localhost:8080/`
-- `up_traefik.sh` - Start Traefik with SSL and routing configuration
-- `down_traefik.sh` - Stop reverse proxy service
+This directory contains scripts for managing Traefik, the reverse proxy that handles domain routing and service discovery for the entire Dolibarr development environment.
+
+#### 📋 Available Scripts
+
+- **`up_traefik.sh`** - Start Traefik reverse proxy with full configuration
+- **`down_traefik.sh`** - Stop Traefik service
 
 ### Dolibarr Management
 
