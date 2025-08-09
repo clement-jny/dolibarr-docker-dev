@@ -53,34 +53,6 @@ This directory contains scripts for managing PHPMyAdmin, a comprehensive web-bas
 - **`up_phpmyadmin.sh`** - Start PHPMyAdmin database administration interface
 - **`down_phpmyadmin.sh`** - Stop PHPMyAdmin service
 
-## 🔧 Usage
-
-### Direct Script Execution
-
-```bash
-# Start infrastructure
-./scripts/traefik/up_traefik.sh
-./scripts/db/up_database.sh
-
-# Download and setup Dolibarr
-./scripts/dolibarr/get_dolibarr.sh 21.0.2
-./scripts/dolibarr/up_dolibarr.sh 21.0.2
-
-# Start database tools
-./scripts/adminer/up_adminer.sh
-./scripts/phpmyadmin/up_phpmyadmin.sh
-```
-
-### Via Makefile (Recommended)
-
-```bash
-# Equivalent commands using make
-make up_traefik up_database
-make get_dolibarr v=21.0.2
-make up_dolibarr v=21.0.2
-make up_adminer up_phpmyadmin
-```
-
 ## 📋 Script Features
 
 - **Error handling**: All scripts include proper error checking and validation
