@@ -28,11 +28,7 @@ custom/
 
 ### Shared Across Versions
 
-All content in this directory is automatically mounted to `/var/www/html/custom` in every Dolibarr container, making your modules available across all versions:
-
-- **Dolibarr 21.0.2**: http://dlb2102.localhost/custom/
-- **Dolibarr 20.0.2**: http://dlb2002.localhost/custom/
-- **Dolibarr 19.0.4**: http://dlb1904.localhost/custom/
+All content in this directory is automatically mounted to `/var/www/html/custom` in every Dolibarr container, making your modules available across all versions of Dolibarr in the development environment.
 
 ### Module Structure
 
