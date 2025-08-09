@@ -169,7 +169,7 @@ make down_dolibarr v=19.0.4
 - **Database**: Each version connects to its own database (e.g., `dolibarr_2102`)
 - **Custom Modules**: Shared across all versions via `/custom` mount
 
-## Management Tools
+## Database Administration Tools
 
 ### **`adminer/`**
 
