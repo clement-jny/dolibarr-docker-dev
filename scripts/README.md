@@ -26,7 +26,7 @@ This directory contains scripts for managing Traefik, the reverse proxy that han
 
 This directory contains comprehensive scripts for managing Dolibarr instances throughout their lifecycle - from download and configuration to deployment and maintenance.
 
-## 📋 Available Scripts
+#### 📋 Available Scripts
 
 - **`get_dolibarr.sh`** - Download, configure, and prepare Dolibarr versions
 - **`up_dolibarr.sh`** - Start Dolibarr instances with proper networking
@@ -44,10 +44,14 @@ This directory contains scripts for managing Adminer, a lightweight web-based da
 - **`up_adminer.sh`** - Start Adminer database management interface
 - **`down_adminer.sh`** - Stop Adminer service
 
-**[`phpmyadmin/`](phpmyadmin/README.md)** - Full MySQL/MariaDB management
+### **`phpmyadmin/`**
 
-- `up_phpmyadmin.sh` - Start PHPMyAdmin at `http://localhost:9090/`
-- `down_phpmyadmin.sh` - Stop PHPMyAdmin service
+This directory contains scripts for managing PHPMyAdmin, a comprehensive web-based MySQL/MariaDB administration tool that provides full database management capabilities for Dolibarr development.
+
+#### 📋 Available Scripts
+
+- **`up_phpmyadmin.sh`** - Start PHPMyAdmin database administration interface
+- **`down_phpmyadmin.sh`** - Stop PHPMyAdmin service
 
 ## 🔧 Usage
 
