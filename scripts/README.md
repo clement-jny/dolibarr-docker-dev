@@ -2,14 +2,16 @@
 
 This directory contains shell scripts for automating the setup, management, and teardown of the Dolibarr development environment. All scripts are organized by service and can be executed individually or through the main Makefile.
 
-## 📁 Directory Structure
+## Core Infrastructure
 
-### Core Infrastructure
+### **`database/`**
 
-**[`db/`](db/README.md)** - Database management scripts
+This directory contains scripts for managing the MariaDB database service that powers all Dolibarr instances in the development environment.
 
-- `up_database.sh` - Start MariaDB with persistent storage
-- `down_database.sh` - Stop database and optionally purge data
+#### 📋 Available Scripts
+
+- **`up_mariadb.sh`** - Start MariaDB database service
+- **`down_mariadb.sh`** - Stop MariaDB database service
 
 **[`traefik/`](traefik/README.md)** - Reverse proxy management
 
