@@ -33,12 +33,16 @@ This directory contains comprehensive scripts for managing Dolibarr instances th
 - **`down_dolibarr.sh`** - Stop specific Dolibarr instances
 - **`down_all.sh`** - Stop all running Dolibarr instances
 
-### Database Administration Tools
+## Database Administration Tools
 
-**[`adminer/`](adminer/README.md)** - Lightweight SQL management
+### **`adminer/`**
 
-- `up_adminer.sh` - Start Adminer at `http://localhost:9080/`
-- `down_adminer.sh` - Stop Adminer service
+This directory contains scripts for managing Adminer, a lightweight web-based database management tool perfect for quick SQL operations and database inspection during Dolibarr development.
+
+#### 📋 Available Scripts
+
+- **`up_adminer.sh`** - Start Adminer database management interface
+- **`down_adminer.sh`** - Stop Adminer service
 
 **[`phpmyadmin/`](phpmyadmin/README.md)** - Full MySQL/MariaDB management
 
