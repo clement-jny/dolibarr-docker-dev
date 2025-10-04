@@ -28,7 +28,8 @@ fi
 
 # Nom du test environment
 TEST_NAME="test-${VERSION//\./-}-${PORT}"
-TEST_DIR="test/${TEST_NAME}"
+TEST_DIR="test"
+TEST_COMPOSE_FILE="${TEST_DIR}/test-${VERSION}-${PORT}.yml"
 
 echo "🧪 Création de l'environnement de test ${TEST_NAME}..."
 
@@ -42,7 +43,7 @@ DB_USER="test_user_${DB_SUFFIX}"
 DB_PASSWORD="test_pass_${DB_SUFFIX}"
 
 # Créer le compose.yml pour le test
-cat > "${TEST_DIR}/compose.yml" <<EOF
+cat > "${TEST_COMPOSE_FILE}" <<EOF
 services:
   ${TEST_NAME}-web:
     image: dolibarr/dolibarr:${VERSION}
@@ -61,7 +62,7 @@ services:
       DOLI_ADMIN_LOGIN: admin
       DOLI_ADMIN_PASSWORD: admin
     volumes:
-      - ../../custom:/var/www/html/custom:ro
+      - ../custom:/var/www/html/custom:ro
     ports:
       - "${PORT}:80"
     depends_on:
