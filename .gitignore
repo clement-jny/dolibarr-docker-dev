@@ -1,42 +1,17 @@
-# *
 .DS_Store
-
 .vscode
 
-# Compose files
-composes/adminer/*
-!composes/adminer/compose.yml
-!composes/adminer/README.md
-
-# composes/database/*/data/
-# composes/database/*/logs/
-# composes/database/*/*.log
-# composes/database/*/*.sql
-composes/database/*/.*
-!composes/database/README.md
-!composes/database/*/compose.yml
-
-composes/dolibarr/*
-!composes/dolibarr/README.md
-
-composes/phpmyadmin/*
-!composes/phpmyadmin/compose.yml
-!composes/phpmyadmin/README.md
-
-composes/traefik/*
-!composes/traefik/compose.yml
-!composes/traefik/traefik.yml
-!composes/traefik/README.md
+# MariaDB data
+.mariadb
 
 # User's custom modules
 custom/*
 !custom/README.md
 
-# Dockerfile files
-dockerfiles/*
-!dockerfiles/example.Dockerfile
-!dockerfiles/README.md
+# User's documents
+documents/*
+!documents/README.md
 
-# Dolibarr's versions
-versions/*
-!versions/README.md
+# Dolibarr data
+dolibarr/*
+!dolibarr/.gitkeep
