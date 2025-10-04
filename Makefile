@@ -2,4 +2,4 @@
 v ?=
 # type ?= traefik
 get_dolibarr:
-	bash scripts/dolibarr/get_dolibarr.sh $(v)
+	bash scripts/get_dolibarr.sh $(v)
