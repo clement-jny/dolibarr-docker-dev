@@ -15,3 +15,7 @@ documents/*
 # Dolibarr data
 dolibarr/*
 !dolibarr/.gitkeep
+
+# Test environment instances
+test/*
+!test/README.md
