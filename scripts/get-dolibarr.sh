@@ -31,7 +31,6 @@ TEMP_DIR=$(mktemp -d)
 cd "${TEMP_DIR}"
 
 # Download the zip file
-echo "⬇️  Downloading..."
 curl -L -o "dolibarr-${VERSION}.zip" "${SOURCEFORGE_URL}"
 
 if [ ! -f "dolibarr-${VERSION}.zip" ]; then
@@ -41,7 +40,7 @@ if [ ! -f "dolibarr-${VERSION}.zip" ]; then
 fi
 
 # Extract the zip file
-echo "📂 Extraction en cours..."
+echo "📂 Extraction..."
 unzip -q "dolibarr-${VERSION}.zip"
 
 
@@ -50,7 +49,7 @@ cd - > /dev/null
 
 # Move the extracted files to the target directory
 echo "📁 Installation of Dolibarr ${VERSION} into ${TARGET_DIR}..."
-cp -r ${TEMP_DIR}/dolibarr-${VERSION}/* ${TARGET_DIR}
+cp -r "${TEMP_DIR}/dolibarr-${VERSION}"/* "${TARGET_DIR}"
 
 
 
