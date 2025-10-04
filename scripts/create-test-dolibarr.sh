@@ -46,6 +46,7 @@ cat > "${TEST_DIR}/compose.yml" <<EOF
 services:
   ${TEST_NAME}-web:
     image: dolibarr/dolibarr:${VERSION}
+    restart: always
     environment:
       PHP_INI_DATE_TIMEZONE: Europe/Paris
 
@@ -68,6 +69,7 @@ services:
 
   ${TEST_NAME}-mariadb:
     image: mariadb:latest
+    restart: always
     environment:
       MARIADB_ROOT_PASSWORD: root
       MARIADB_DATABASE: ${DB_NAME}
