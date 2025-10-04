@@ -1,0 +1,23 @@
+services:
+  web:
+    build: .
+    restart: always
+    ports:
+      - '8080:80'
+    volumes:
+      - ./dolibarr/htdocs:/var/www/html
+      - ./documents:/var/www/documents
+      - ./custom:/var/www/html/custom
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      TZ: Europe/Paris
+    volumes:
+      - ./.data:/var/lib/mysql
+    ports:
+      - '3306:3306'
