@@ -3,7 +3,7 @@ services:
     build: .
     restart: always
     ports:
-      - '8080:80'
+      - '8000:80'
     volumes:
       - ./dolibarr/htdocs:/var/www/html
       - ./documents:/var/www/documents

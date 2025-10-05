@@ -9,8 +9,8 @@ TARGET_DIR="dolibarr"
 # Check if version argument is provided
 if [ -z "${VERSION}" ]; then
     echo "❌ Missing version."
-    echo "Use: ./scripts/get-dolibarr.sh X.Y.Z or make get_dolibarr v=X.Y.Z"
-    echo "Example: ./scripts/get-dolibarr.sh 22.0.2 or make get_dolibarr v=22.0.2"
+    echo "Use: ./scripts/get-dolibarr.sh X.Y.Z or make get-dolibarr v=X.Y.Z"
+    echo "Example: ./scripts/get-dolibarr.sh 22.0.2 or make get-dolibarr v=22.0.2"
     exit 1
 fi
 
