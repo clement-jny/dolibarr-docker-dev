@@ -1,81 +1,61 @@
 # Dolibarr Docker Development Environment
 
-A comprehensive Docker-based development environment for Dolibarr ERP/CRM system, designed for core development and module testing with multiple concurrent versions.
+A Docker-based development environment for Dolibarr ERP/CRM system with support for custom modules and testing.
 
-## 🚀 Features
+## Quick Start
 
-- **Multi-version support**: Run multiple Dolibarr versions simultaneously
-- **Automated setup**: One-command download and configuration of Dolibarr versions
-- **Pre-configured environment**: Ready-to-use database and web server setup
-- **Reverse proxy**: Traefik for easy domain-based access (dlb2002.localhost, dlb2102.localhost, etc.)
-- **Development tools**: Adminer and PHPMyAdmin for database management
-- **Custom modules**: Support for custom Dolibarr modules and extensions
+1. **Get Dolibarr source code:**
 
-## 📁 Project Structure
+   ```bash
+   make get-dolibarr v=22.0.0
+   ```
 
-```
-dolibarr-docker-dev/
-├── composes/          # Docker Compose configurations
-├── custom/            # Custom Dolibarr modules and extensions
-├── dockerfiles/       # Custom Docker images
-├── scripts/           # Automation scripts for setup and management
-└── versions/          # Downloaded Dolibarr versions
-```
+2. **Start the development environment:**
 
-## 🛠️ Quick Start
+   ```bash
+   docker compose up -d
+   ```
 
-### 1. Start the infrastructure
+3. **Access Dolibarr:**
+   - Web interface: http://localhost:8000
+   - Database: localhost:3306 (root/root)
+
+## Project Structure
+
+- `dolibarr/` - Dolibarr source code
+- `custom/` - Custom modules and extensions
+- `documents/` - Dolibarr documents and data
+- `test/` - Test instance for modules
+- `scripts/` - Automation scripts
+
+## Testing Different Versions
+
+Create and run test instances:
 
 ```bash
-make up_traefik    # Start reverse proxy
-make up_database   # Start MariaDB
+# Create test configuration
+make create-test-dolibarr v=22.0.0 p=8010
+
+# Start test instance
+make up-test-dolibarr v=22.0.0 p=8010
+
+# Stop test instance
+make down-test-dolibarr v=22.0.0 p=8010
 ```
 
-### 2. Download and setup Dolibarr
+## Custom Modules
 
-```bash
-make get_dolibarr v=21.0.2    # Download Dolibarr 21.0.2
-make up_dolibarr v=21.0.2     # Start Dolibarr instance
-```
+Place your custom modules in the `custom/` directory. They will be automatically mounted in both development and test environments.
 
-### 3. Access your Dolibarr instance
+## Available Commands
 
-- **Dolibarr**: http://dlb2102.localhost/
-- **Adminer**: http://localhost:9080/
-- **PHPMyAdmin**: http://localhost:9090/
-- **Traefik Dashboard**: http://localhost:8080/
+- `make get-dolibarr v=<version>` - Download Dolibarr version
+- `make create-test-dolibarr v=<version> p=<port>` - Create test configuration
+- `make up-test-dolibarr v=<version> p=<port>` - Start test instance
+- `make down-test-dolibarr v=<version> p=<port>` - Stop test instance
 
-## 📋 Database Configuration
+## Requirements
 
-When setting up Dolibarr for the first time:
-
-- **Database server**: `mariadb`
-- **Database name**: `dolibarr_XXXX` (auto-created, where XXXX is the clean version)
-- **Username**: `dolibarr_user_XXXX`
-- **Password**: `dolibarr_password_XXXX`
-- **Port**: `3306`
-
-## 🔧 Available Commands
-
-### Infrastructure Management
-
-- `make up_traefik` / `make down_traefik` - Manage reverse proxy
-- `make up_database` / `make down_database` - Manage database
-- `make up_adminer` / `make down_adminer` - Manage Adminer
-- `make up_phpmyadmin` / `make down_phpmyadmin` - Manage PHPMyAdmin
-
-### Dolibarr Management
-
-- `make get_dolibarr v=X.Y.Z` - Download and configure Dolibarr version
-- `make up_dolibarr v=X.Y.Z` - Start Dolibarr instance
-- `make down_dolibarr v=X.Y.Z` - Stop Dolibarr instance
-
-## 📂 Directory Details
-
-Each directory has its own README with detailed information:
-
-- [`composes/`](composes/README.md) - Docker Compose configurations
-- [`custom/`](custom/readme.md) - Custom modules and extensions
-- [`dockerfiles/`](dockerfiles/README.md) - Custom Docker images
-- [`scripts/`](scripts/README.md) - Automation scripts
-- [`versions/`](versions/README.md) - Dolibarr versions storage
+- Docker
+- Docker Compose
+- Make
